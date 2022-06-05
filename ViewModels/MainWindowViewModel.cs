@@ -46,8 +46,6 @@ namespace lab.ViewModels
         }
         public ObservableCollection<ToDoList> Items { get; set; }
 
-
-
         private Dictionary<DateTimeOffset, List<ToDoList>> ListsOnDays;
 
         ViewModelBase content;
@@ -81,13 +79,11 @@ namespace lab.ViewModels
             this.ChangeObservableCollection(this.Date);
         }
 
-
         public void ChangeView()
         {
             if (this.Content is FirstViewModel)
             {
                 this.Content = new SecondViewModel();
-
             }
             else
             {
@@ -114,7 +110,6 @@ namespace lab.ViewModels
                 }
             }
         }
-
         public void SaveChanges()
         {
             if (this.Title != "")
@@ -133,7 +128,7 @@ namespace lab.ViewModels
                 this.ChangeView();
             }
         }
-
+        
         public void DeleteItem(ToDoList item)
         {
             this.ListsOnDays[date].Remove(item);
